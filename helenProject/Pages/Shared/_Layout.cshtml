@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - helenProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/helenProject.styles.css" asp-append-version="true" />
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 fixed-top">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Helen Arcade</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a href="/Explorer/Navigate/Arcade" class="nav-link">Arcade</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Explorer/Navigate/OurProject" class="nav-link">Our Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Explorer/Navigate/AboutUs" class="nav-link">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Explorer/Navigate/HelenVision" class="nav-link">Helen Vision</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav justify-content-end">
+                    <button onclick="window.location.href = '/Explorer/Navigate/HelenVision';" type="button" class="btn btn-outline-primary">Get Started</button>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+                @RenderBody()
+        </div>
+    </main>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - helenProject - <a asp-area="" asp-page="/Privacy">Privacy & Policy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
